@@ -1,0 +1,29 @@
+health-planner/
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── routers/
+│   │   │   └── health.py
+│   │   ├── tools/
+│   │   │   ├── bmr_calculator.py
+│   │   │   ├── meal_planner.py
+│   │   │   ├── recipe_fetcher.py
+│   │   │   ├── workout_generator.py
+│   │   │   ├── progress_tracker.py
+│   │   │   └── push_notifier.py
+│   │   ├── models/
+│   │   │   └── schemas.py
+│   │   ├── lmm_client.py
+│   │   └── dependencies.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── frontend/
+│   ├── client/   (Vite + React)
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   ├── App.jsx
+│   │   │   └── main.jsx
+│   │   ├── package.json
+│   │   └── vite.config.js
+│   └── Dockerfile   (optional for building React)
+└── docker-compose.yml  
