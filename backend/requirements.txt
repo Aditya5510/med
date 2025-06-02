@@ -1,7 +1,12 @@
-fastapi
+fastapi>=0.98.0
 uvicorn[standard]
-python-dotenv
 motor
-pydantic
+python-jose
 passlib[bcrypt]
+python-dotenv
+pydantic>=2.0,<3.0
+pydantic-settings
+pydantic[email]
 PyJWT
+requests
+hugging_hub

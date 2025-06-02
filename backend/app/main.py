@@ -10,22 +10,18 @@ app = FastAPI(
 
 
 app.include_router(auth.router)
-
-
 app.include_router(health.router, prefix="/api/health", tags=["health"])
 
 @app.on_event("startup")
 async def startup_db_client():
-    """
-    Instantiates the Motor client (from dependencies.py) once at startup.
-    """
+ 
     global client
     if client is None:
        
         from .dependencies import get_database
         async for _ in get_database():
             break
-    print(f"✅ Connected to MongoDB at {settings.mongodb_uri}, DB: {settings.database_name}")
+    print(f"Connected to MongoDB at {settings.mongodb_uri}, DB: {settings.database_name}")
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
@@ -35,7 +31,7 @@ async def shutdown_db_client():
     global client
     if client:
         client.close()
-        print("🛑 MongoDB client closed.")
+        print("MongoDB client closed.")
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
