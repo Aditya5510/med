@@ -26,7 +26,4 @@ health-planner/
 │   │   ├── package.json
 │   │   └── vite.config.js
 │   └── Dockerfile   (optional for building React)
-└── docker-compose.yml  
-
-
-
+└── docker-compose.yml
