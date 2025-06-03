@@ -9,4 +9,4 @@ pydantic-settings
 pydantic[email]
 PyJWT
 requests
-hugging_hub
+huggingface_hub
